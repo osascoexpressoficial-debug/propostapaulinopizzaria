@@ -1,0 +1,627 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paulino Pizzaria × Osasco Express</title>
+<meta name="description" content="Proposta premium de gestão logística de delivery para Paulino Pizzaria, Perdizes.">
+<meta property="og:title" content="Paulino Pizzaria × Osasco Express">
+<meta property="og:description" content="Escala pré-confirmada, parceiros autônomos e suporte para o pico do jantar.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/paulino-pizza.webp">
+<meta name="theme-color" content="#163829">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#163829;
+  --green2:#081f16;
+  --green3:#244b36;
+  --gold:#c7a15b;
+  --gold2:#e2c57a;
+  --cream:#fbf3e6;
+  --cream2:#f1dec1;
+  --paper:#fffaf2;
+  --ink:#1f1911;
+  --muted:#6e6255;
+  --wood:#775131;
+  --line:rgba(31,25,17,.13);
+  --lineDark:rgba(255,250,242,.16);
+  --shadow:0 28px 88px rgba(11,22,15,.28);
+  --soft:0 16px 42px rgba(11,22,15,.11);
+  --radius:30px;
+  --max:1120px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Inter,Arial,Helvetica,sans-serif;
+  color:var(--ink);
+  background:
+    radial-gradient(circle at 14% -8%,rgba(226,197,122,.28),transparent 28%),
+    radial-gradient(circle at 86% 2%,rgba(119,81,49,.20),transparent 28%),
+    linear-gradient(180deg,var(--green2) 0%,var(--green) 36%,var(--cream) 36%,var(--cream) 100%);
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%;height:auto}
+button{font:inherit}
+h1,h2,h3{margin:0;line-height:1.02;letter-spacing:-.045em}
+h1,h2,.serif{font-family:"Playfair Display",Georgia,serif}
+h1{font-size:clamp(40px,6.8vw,78px);max-width:840px}
+h2{font-size:clamp(30px,4.7vw,54px);max-width:860px}
+h3{font-size:21px}
+p{margin:0}
+.wrap{width:min(var(--max),calc(100% - 34px));margin:auto}
+.top{
+  position:sticky;
+  top:0;
+  z-index:60;
+  background:rgba(8,31,22,.92);
+  border-bottom:1px solid var(--lineDark);
+  backdrop-filter:blur(16px);
+}
+.nav{min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.brand{display:flex;align-items:center;gap:12px;color:#fff;min-width:0}
+.brand img{width:46px;height:46px;object-fit:contain;border-radius:14px;background:#102a1f;padding:5px;border:1px solid rgba(226,197,122,.34)}
+.brand strong{display:block;font-size:14px;line-height:1.1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:340px}
+.brand span{display:block;color:#d8c8a8;font-size:12px;margin-top:2px}
+.actions{display:flex;gap:8px;align-items:center}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:44px;
+  padding:0 18px;
+  border-radius:999px;
+  border:0;
+  cursor:pointer;
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:-.01em;
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  color:#17120b;
+  box-shadow:0 14px 32px rgba(199,161,91,.25);
+  transition:.18s ease;
+}
+.btn:hover{transform:translateY(-1px)}
+.btn.secondary{background:rgba(255,250,242,.08);border:1px solid var(--lineDark);box-shadow:none;color:#fff}
+.hero{color:#fff;padding:58px 0 34px}
+.hero-grid{display:grid;grid-template-columns:1.03fr .97fr;gap:clamp(24px,4vw,48px);align-items:center}
+.label{
+  display:block;
+  color:var(--gold2);
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  font-size:11px;
+  margin-bottom:14px;
+}
+.label:before{content:"";display:inline-block;width:26px;height:2px;background:currentColor;border-radius:99px;margin-right:10px;vertical-align:middle}
+.identity{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin-bottom:22px;
+  color:#fff;
+}
+.identity img{width:72px;height:72px;border-radius:22px;object-fit:contain;background:#102a1f;padding:8px;border:1px solid rgba(226,197,122,.34)}
+.identity b{display:block;font-family:"Playfair Display",Georgia,serif;font-size:28px;line-height:1}
+.identity span{display:block;color:#dccdab;font-size:12px;text-transform:uppercase;letter-spacing:.12em;font-weight:900;margin-top:4px}
+.lead{margin-top:18px;color:#f0e5d0;font-size:clamp(16px,2vw,20px);line-height:1.72;max-width:760px}
+.note{margin-top:14px;color:#d8cab0;font-size:14px;line-height:1.68;max-width:720px}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+.quick{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+.quick-card{
+  background:rgba(255,250,242,.08);
+  border:1px solid var(--lineDark);
+  border-radius:18px;
+  padding:15px;
+}
+.quick-card b{display:block;color:var(--gold2);font-size:23px;letter-spacing:-.05em;line-height:1}
+.quick-card span{display:block;margin-top:8px;color:#eadfce;font-size:12.5px;line-height:1.35}
+.hero-card{
+  border-radius:36px;
+  overflow:hidden;
+  background:rgba(255,250,242,.07);
+  border:1px solid var(--lineDark);
+  box-shadow:var(--shadow);
+}
+.hero-photo{
+  min-height:560px;
+  position:relative;
+  background:#111;
+}
+.hero-photo img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.hero-photo:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(0deg,rgba(8,31,22,.92) 0%,rgba(8,31,22,.22) 55%,rgba(8,31,22,.08) 100%),
+    radial-gradient(circle at 18% 15%,rgba(226,197,122,.18),transparent 38%);
+}
+.photo-caption{
+  position:absolute;
+  left:24px;
+  right:24px;
+  bottom:24px;
+  z-index:2;
+  color:#fff;
+}
+.photo-caption h3{font-family:"Playfair Display",Georgia,serif;font-size:34px;margin-bottom:8px}
+.photo-caption p{color:#eadfce;font-size:14px;line-height:1.6}
+section{padding:30px 0}
+.paper,.dark{
+  border-radius:var(--radius);
+  padding:clamp(22px,4vw,42px);
+  box-shadow:var(--soft);
+}
+.paper{background:var(--paper);border:1px solid var(--line)}
+.dark{background:linear-gradient(135deg,var(--green2),var(--green) 65%,#243e2a);border:1px solid rgba(255,255,255,.08);color:#fff}
+.head{display:grid;grid-template-columns:1fr minmax(250px,390px);gap:24px;align-items:end;margin-bottom:24px}
+.head p,.muted,.card p,.card li,.step p,.small{color:var(--muted);font-size:14px;line-height:1.7}
+.dark .head p,.dark .muted,.dark .card p,.dark .small{color:#e1d6c5}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.card{
+  background:#fffdf8;
+  border:1px solid var(--line);
+  border-radius:22px;
+  padding:21px;
+}
+.card.good{background:#f1f8ef;border-color:rgba(22,56,41,.18)}
+.card.warn{background:#fff5e8;border-color:rgba(199,161,91,.32)}
+.card.dark{background:rgba(255,250,242,.08);border-color:var(--lineDark);color:#fff}
+.card h3{margin-bottom:9px}
+.card-label{display:block;color:#6a4a20;text-transform:uppercase;letter-spacing:.08em;font-size:11px;font-weight:900;margin-bottom:10px}
+.quote{
+  margin-top:18px;
+  border-left:5px solid var(--gold);
+  background:#fbf0df;
+  border-radius:0 18px 18px 0;
+  padding:18px 20px;
+  color:#33281c;
+  font-size:17px;
+  line-height:1.65;
+}
+.operation{display:grid;grid-template-columns:repeat(7,1fr);gap:12px}
+.day{
+  background:#fffdf8;
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:16px;
+  min-height:132px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+.day.hot{background:linear-gradient(180deg,#fff3dd,#fffaf2);border-color:rgba(199,161,91,.42)}
+.day small{font-size:12px;color:var(--muted);font-weight:900;text-transform:uppercase;letter-spacing:.06em}
+.day b{font-size:42px;line-height:.95;color:var(--green);letter-spacing:-.07em}
+.day span{color:var(--muted);font-size:12px;line-height:1.35}
+.prices{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.price-card{border-radius:24px;border:1px solid var(--line);background:#fffdf8;overflow:hidden}
+.price-head{padding:15px 18px;background:#f1e3ca;border-bottom:1px solid var(--line);font-weight:900}
+.price-body{padding:22px}
+.price{display:block;color:var(--green);font-size:48px;font-weight:900;line-height:1;letter-spacing:-.06em}
+details{background:#fffdf8;border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:var(--soft)}
+details+details{margin-top:12px}
+summary{list-style:none;cursor:pointer;padding:18px 20px;font-weight:900;display:flex;align-items:center;justify-content:space-between;gap:14px}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--green);color:#fff;flex:0 0 auto}
+details[open] summary:after{content:"–"}
+.detail{padding:0 20px 20px}
+.table{width:100%;border-collapse:separate;border-spacing:0;overflow:hidden;border:1px solid var(--line);border-radius:18px}
+.table th,.table td{padding:13px 14px;text-align:left;border-bottom:1px solid var(--line)}
+.table th{background:var(--green);color:#fff;font-size:12px;text-transform:uppercase;letter-spacing:.07em}
+.table td{background:#fff;color:#52463b;font-size:14px}
+.table tr:last-child td{border-bottom:0}
+.plans{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.plan{background:#fffdf8;border:1px solid var(--line);border-radius:20px;padding:18px}
+.plan b{font-size:14px}
+.plan strong{display:block;color:var(--green);font-size:25px;letter-spacing:-.05em;margin-top:8px}
+.plan span{display:block;color:var(--muted);font-size:12px;line-height:1.4;margin-top:6px}
+.recommend{
+  margin-top:16px;
+  padding:16px 18px;
+  border-radius:20px;
+  background:#f5ead7;
+  border:1px solid rgba(199,161,91,.32);
+  color:#45321e;
+}
+.steps{display:grid;grid-template-columns:repeat(7,1fr);gap:10px}
+.step{background:#fffdf8;border:1px solid var(--line);border-radius:18px;padding:16px}
+.step b{width:36px;height:36px;border-radius:13px;display:grid;place-items:center;background:linear-gradient(135deg,var(--gold),var(--gold2));margin-bottom:12px}
+.step h3{font-size:16px;margin-bottom:6px}
+.photos{display:grid;grid-template-columns:1.1fr .9fr;gap:16px}
+.photo{position:relative;min-height:320px;border-radius:28px;overflow:hidden;box-shadow:var(--soft);background:#111}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.photo:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(8,31,22,.84),rgba(8,31,22,.03) 62%)}
+.caption{position:absolute;z-index:2;left:22px;right:22px;bottom:22px;color:#fff}
+.caption h3{font-family:"Playfair Display",Georgia,serif;font-size:32px}
+.caption p{color:#eadfcb;font-size:14px;line-height:1.6}
+.cta{padding:52px 0}
+.cta-box{
+  background:linear-gradient(135deg,var(--green2),var(--green) 58%,#273a24);
+  border:1px solid rgba(226,197,122,.22);
+  border-radius:34px;
+  color:#fff;
+  padding:clamp(26px,5vw,52px);
+  text-align:center;
+  box-shadow:var(--shadow);
+}
+.cta-box h2{margin:auto}
+.cta-box p{max-width:760px;margin:16px auto 28px;color:#efe4cf;line-height:1.75}
+footer{background:#0b2419;color:#fff;padding:30px 0 94px;border-top:1px solid var(--lineDark)}
+.footer{display:flex;justify-content:space-between;gap:24px;align-items:flex-end;flex-wrap:wrap}
+footer small{display:block;color:#baad9a;font-size:11px;line-height:1.7;margin-top:6px}
+.sticky{
+  display:none;
+  position:fixed;
+  left:0;
+  right:0;
+  bottom:0;
+  z-index:60;
+  background:rgba(11,36,25,.94);
+  border-top:1px solid var(--lineDark);
+  padding:10px 14px calc(12px + env(safe-area-inset-bottom));
+  backdrop-filter:blur(14px);
+}
+.sticky .btn{width:100%;border-radius:15px}
+.fade{opacity:0;transform:translateY(16px);transition:.55s ease}
+.fade.in{opacity:1;transform:none}
+@media(max-width:1100px){.operation{grid-template-columns:repeat(4,1fr)}.steps{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:940px){
+  .hero{padding:42px 0 26px}
+  .hero-grid,.head,.grid-2,.grid-3,.photos{grid-template-columns:1fr}
+  .quick,.prices,.plans{grid-template-columns:repeat(2,1fr)}
+  .actions .secondary{display:none}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .hero-photo{min-height:430px}
+  .sticky{display:block}
+}
+@media(max-width:680px){
+  .wrap{width:min(var(--max),calc(100% - 24px))}
+  .brand strong{max-width:190px}
+  .brand span{display:none}
+  h1{font-size:clamp(36px,11.4vw,48px)}
+  h2{font-size:clamp(30px,9vw,40px)}
+  section{padding:24px 0}
+  .hero-actions{display:grid;grid-template-columns:1fr}
+  .hero-actions .btn{width:100%;border-radius:15px}
+  .quick,.operation,.prices,.plans,.steps{grid-template-columns:1fr}
+  .identity img{width:62px;height:62px}
+  .identity b{font-size:24px}
+  .hero-photo{min-height:360px}
+  .day{min-height:auto;display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center}
+  .day b{font-size:34px;margin:0;grid-row:1 / span 2}
+  .day span{grid-column:1 / -1}
+  .photo{min-height:260px}
+  .caption h3{font-size:28px}
+  .table,.table tbody,.table tr,.table td{display:block;width:100%}
+  .table thead{display:none}
+  .table tr{border-bottom:1px solid var(--line)}
+  .table tr:last-child{border-bottom:0}
+  .table td{border-bottom:0;padding:12px 14px}
+  .table td:before{content:attr(data-label);display:block;font-size:10.5px;text-transform:uppercase;letter-spacing:.08em;font-weight:900;color:#8d7e6e;margin-bottom:3px}
+  .price{font-size:42px}
+}
+@media(max-width:380px){.brand img{display:none}.paper,.dark,.cta-box{border-radius:22px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.fade{opacity:1;transform:none;transition:none}}
+@media print{.top,.sticky,.btn{display:none!important}body{background:#fff}.hero{color:#111;padding:20px 0}.lead,.note{color:#333}section{padding:12px 0}.paper,.dark,.cta-box,.hero-card{box-shadow:none;break-inside:avoid}footer{background:#fff;color:#111;padding:20px 0}details{break-inside:avoid}}
+</style>
+</head>
+<body id="top">
+<header class="top">
+  <div class="wrap nav">
+    <a class="brand" href="#top">
+      <img src="assets/paulino-logo.webp" alt="Paulino Pizzaria">
+      <div><strong>Paulino × Osasco Express</strong><span>Gestão logística de delivery</span></div>
+    </a>
+    <div class="actions">
+      <button class="btn secondary" onclick="window.print()">Salvar PDF</button>
+      <a class="btn" href="#aprovar">Aprovar</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="fade">
+      <div class="identity">
+        <img src="assets/paulino-logo.webp" alt="Logo Paulino">
+        <div><b>Paulino Pizzaria</b><span>Desde 1945 • Rua João Ramalho, 996</span></div>
+      </div>
+      <span class="label">Proposta comercial • Perdizes</span>
+      <h1>Uma casa com a tradição da Paulino não pode depender de improviso no pico do jantar.</h1>
+      <p class="lead">A Osasco Express propõe uma operação com parceiros entregadores autônomos, escala pré-confirmada, suporte no turno e reforço nos dias de maior demanda.</p>
+      <div class="hero-actions">
+        <a class="btn" href="#modelo">Ver operação</a>
+        <a class="btn secondary" href="#valores">Ver valores</a>
+      </div>
+      <div class="quick">
+        <div class="quick-card"><b>19h–21h</b><span>Pico médio de maior pressão.</span></div>
+        <div class="quick-card"><b>7 dias úteis</b><span>Implantação após contrato e acessos.</span></div>
+        <div class="quick-card"><b>B2B</b><span>Parceiros autônomos, sem vínculo com a Paulino.</span></div>
+      </div>
+    </div>
+    <aside class="hero-card fade">
+      <div class="hero-photo">
+        <img src="assets/paulino-pizza.webp" alt="Pizza Paulino">
+        <div class="photo-caption">
+          <h3>A entrega também carrega a marca.</h3>
+          <p>Se ela falha, o cliente não separa cozinha, motoboy e plataforma. Ele sente que a experiência da casa falhou.</p>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section id="dor">
+  <div class="wrap paper fade">
+    <div class="head">
+      <div><span class="label">A dor trazida pelo Roney</span><h2>Formar equipe para sustentar uma marca tradicional no horário certo.</h2></div>
+      <p>O desafio informado foi a dificuldade de achar motoboys e a necessidade de uma empresa que agregue equipe. Para a Paulino, isso precisa ser tratado com escala, processo e acompanhamento.</p>
+    </div>
+    <div class="grid-3">
+      <article class="card warn"><span class="card-label">No pico</span><h3>Quando a rua falha, a cozinha sente</h3><p>Entre 19h e 21h, um parceiro que não chega pode criar acúmulo antes mesmo da noite ganhar ritmo.</p></article>
+      <article class="card warn"><span class="card-label">Na operação</span><h3>O pico não espera improviso</h3><p>Pizza pronta, pedido aguardando retirada e cliente cobrando viram pressão para loja, cozinha e atendimento.</p></article>
+      <article class="card warn"><span class="card-label">Na marca</span><h3>A experiência não termina no forno</h3><p>Quando a entrega falha, o cliente sente a experiência inteira como falha, mesmo quando a pizza sai perfeita.</p></article>
+    </div>
+    <div class="quote">A Paulino já tem tradição, produto e demanda. O que estamos propondo é uma operação de rua compatível com o peso da marca.</div>
+  </div>
+</section>
+
+<section id="modelo">
+  <div class="wrap paper fade">
+    <div class="head">
+      <div><span class="label">Modelo inicial recomendado</span><h2>Escala pensada para base, reforço e fim de semana forte.</h2></div>
+      <p>Modelo inicial informado para dar cobertura à operação, com acompanhamento e ajuste conforme comportamento real dos pedidos, horários e distância das rotas.</p>
+    </div>
+    <div class="operation">
+      <div class="day"><small>Segunda</small><b>1</b><span>parceiro entregador</span></div>
+      <div class="day"><small>Terça</small><b>1</b><span>parceiro entregador</span></div>
+      <div class="day"><small>Quarta</small><b>2</b><span>parceiros entregadores</span></div>
+      <div class="day"><small>Quinta</small><b>2</b><span>parceiros entregadores</span></div>
+      <div class="day hot"><small>Sexta</small><b>7+</b><span>parceiros entregadores</span></div>
+      <div class="day hot"><small>Sábado</small><b>7+</b><span>parceiros entregadores</span></div>
+      <div class="day hot"><small>Domingo</small><b>7+</b><span>parceiros entregadores</span></div>
+    </div>
+    <details style="margin-top:16px">
+      <summary>Ver prévia de diárias por dia</summary>
+      <div class="detail">
+        <table class="table">
+          <thead><tr><th>Dia</th><th>Base inicial</th><th>Prévia de diária</th></tr></thead>
+          <tbody>
+            <tr><td data-label="Dia">Segunda</td><td data-label="Base inicial">1 × R$ 75</td><td data-label="Prévia">R$ 75</td></tr>
+            <tr><td data-label="Dia">Terça</td><td data-label="Base inicial">1 × R$ 75</td><td data-label="Prévia">R$ 75</td></tr>
+            <tr><td data-label="Dia">Quarta</td><td data-label="Base inicial">2 × R$ 75</td><td data-label="Prévia">R$ 150</td></tr>
+            <tr><td data-label="Dia">Quinta</td><td data-label="Base inicial">2 × R$ 75</td><td data-label="Prévia">R$ 150</td></tr>
+            <tr><td data-label="Dia">Sexta</td><td data-label="Base inicial">7 × R$ 80</td><td data-label="Prévia">R$ 560</td></tr>
+            <tr><td data-label="Dia">Sábado</td><td data-label="Base inicial">7 × R$ 80</td><td data-label="Prévia">R$ 560</td></tr>
+            <tr><td data-label="Dia">Domingo</td><td data-label="Base inicial">7 × R$ 80</td><td data-label="Prévia">R$ 560</td></tr>
+            <tr><td data-label="Dia">Feriado</td><td data-label="Base inicial">mínimo 5 × R$ 120</td><td data-label="Prévia">R$ 600</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section id="datas">
+  <div class="wrap dark fade">
+    <div class="head">
+      <div><span class="label">Datas especiais</span><h2>Feriados e Copa precisam de operação tratada antes.</h2></div>
+      <p>Datas especiais concentram demanda e disputa por bons parceiros. Por isso, a proposta prevê regra específica para reforço.</p>
+    </div>
+    <div class="grid-3">
+      <article class="card dark"><h3>Feriados</h3><p>Mínimo de 5 parceiros entregadores, com diária especial.</p></article>
+      <article class="card dark"><h3>Copa do Mundo e jogos especiais</h3><p>Mínimo de 5 parceiros, com alinhamento prévio da operação.</p></article>
+      <article class="card dark"><h3>Fim de ano</h3><p>24/12, 25/12, 31/12 e 01/01 não fazem parte da operação regular da Osasco Express.</p></article>
+    </div>
+    <details style="margin-top:16px;background:rgba(255,250,242,.08);border-color:rgba(255,255,255,.16)">
+      <summary style="color:#fff">Ver observação sobre datas especiais</summary>
+      <div class="detail"><p class="muted">Datas especiais exigem confirmação prévia, expectativa realista de tempo de preparo e comunicação clara no grupo oficial. A quantidade mínima pode ser ajustada quando a demanda prevista exigir mais cobertura.</p></div>
+    </details>
+  </div>
+</section>
+
+<section id="valores">
+  <div class="wrap paper fade">
+    <div class="head">
+      <div><span class="label">Diárias operacionais</span><h2>Valores claros, separados das taxas por km e da gestão.</h2></div>
+      <p>Em Perdizes, bons entregadores são disputados por pizzarias, restaurantes, eventos e operações de alta demanda. A diária precisa ser atrativa para formar equipe e manter compromisso.</p>
+    </div>
+    <div class="prices">
+      <article class="price-card"><div class="price-head">Segunda a quinta</div><div class="price-body"><span class="price">R$ 75</span><p class="muted">Por parceiro entregador no turno.</p></div></article>
+      <article class="price-card"><div class="price-head">Sexta, sábado e domingo</div><div class="price-body"><span class="price">R$ 80</span><p class="muted">Por parceiro entregador nos dias fortes.</p></div></article>
+      <article class="price-card"><div class="price-head">Feriados</div><div class="price-body"><span class="price">R$ 120</span><p class="muted">Por parceiro em operação especial.</p></div></article>
+    </div>
+    <div class="quote">A janta dos parceiros entregadores será fornecida pela Paulino.</div>
+  </div>
+</section>
+
+<section id="taxas">
+  <div class="wrap paper fade">
+    <div class="head">
+      <div><span class="label">Taxas por km</span><h2>Enxuto na leitura, completo para conferência.</h2></div>
+      <p>Taxas aplicadas conforme distância da rota, até 10 km. Acima de 10 km exige alinhamento específico.</p>
+    </div>
+    <details>
+      <summary>Ver tabela de segunda a quinta</summary>
+      <div class="detail">
+        <table class="table">
+          <thead><tr><th>Distância</th><th>Taxa</th></tr></thead>
+          <tbody>
+            <tr><td data-label="Distância">até 2 km</td><td data-label="Taxa">R$ 7</td></tr>
+            <tr><td data-label="Distância">3 a 4 km</td><td data-label="Taxa">R$ 8</td></tr>
+            <tr><td data-label="Distância">5 km</td><td data-label="Taxa">R$ 9</td></tr>
+            <tr><td data-label="Distância">6 km</td><td data-label="Taxa">R$ 9</td></tr>
+            <tr><td data-label="Distância">7 km</td><td data-label="Taxa">R$ 11</td></tr>
+            <tr><td data-label="Distância">8 km</td><td data-label="Taxa">R$ 13</td></tr>
+            <tr><td data-label="Distância">9 km</td><td data-label="Taxa">R$ 14</td></tr>
+            <tr><td data-label="Distância">10 km</td><td data-label="Taxa">R$ 15</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+    <details>
+      <summary>Ver tabela de sexta, sábado, domingo e feriados</summary>
+      <div class="detail">
+        <table class="table">
+          <thead><tr><th>Distância</th><th>Taxa</th></tr></thead>
+          <tbody>
+            <tr><td data-label="Distância">até 3 km</td><td data-label="Taxa">R$ 9</td></tr>
+            <tr><td data-label="Distância">4 km</td><td data-label="Taxa">R$ 10</td></tr>
+            <tr><td data-label="Distância">5 a 6 km</td><td data-label="Taxa">R$ 11</td></tr>
+            <tr><td data-label="Distância">7 km</td><td data-label="Taxa">R$ 13</td></tr>
+            <tr><td data-label="Distância">8 km</td><td data-label="Taxa">R$ 14</td></tr>
+            <tr><td data-label="Distância">9 km</td><td data-label="Taxa">R$ 15</td></tr>
+            <tr><td data-label="Distância">10 km</td><td data-label="Taxa">R$ 18</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section id="planos">
+  <div class="wrap paper fade">
+    <div class="head">
+      <div><span class="label">Taxa administrativa</span><h2>Planos de gestão logística Osasco Express.</h2></div>
+      <p>A taxa administrativa remunera organização da escala, suporte, acompanhamento, comunicação com parceiros, fechamento e rotina operacional. Diárias, taxas por km e plano administrativo são itens separados.</p>
+    </div>
+    <div class="plans">
+      <div class="plan"><b>Básico</b><strong>R$ 799</strong><span>até 800 entregas/mês</span></div>
+      <div class="plan"><b>Médio</b><strong>R$ 1.299</strong><span>até 1.300 entregas/mês</span></div>
+      <div class="plan"><b>Contratado</b><strong>R$ 1.599</strong><span>até 1.800 entregas/mês</span></div>
+      <div class="plan"><b>Avançado</b><strong>Personalizado</strong><span>acima de 1.800 entregas/mês</span></div>
+    </div>
+    <div class="recommend"><strong>Recomendação comercial:</strong> o plano administrativo deve ser definido conforme volume validado na operação, evitando cravar um plano antes da leitura real dos primeiros ciclos.</div>
+    <details style="margin-top:16px">
+      <summary>O que entra na gestão logística?</summary>
+      <div class="detail">
+        <div class="grid-3">
+          <article class="card"><h3>Escala e confirmação</h3><p>Times organizados previamente, com confirmação diária e envio dos nomes no grupo oficial.</p></article>
+          <article class="card"><h3>Suporte operacional</h3><p>Acompanhamento durante a operação para reduzir improviso e orientar ajustes.</p></article>
+          <article class="card"><h3>Fechamento e rotina</h3><p>Organização de custos operacionais, comunicação e rotina de acompanhamento.</p></article>
+        </div>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section id="gestao">
+  <div class="wrap paper fade">
+    <div class="head">
+      <div><span class="label">Como a Osasco Express opera</span><h2>Processo para dar previsibilidade à rua do delivery.</h2></div>
+      <p>Os times são confirmados previamente. Além disso, todos os dias a Osasco Express confirma a equipe e envia os nomes dos parceiros no grupo oficial da operação.</p>
+    </div>
+    <div class="grid-4">
+      <article class="card good"><h3>Escala pré-confirmada</h3><p>Organização dos parceiros antes da operação começar.</p></article>
+      <article class="card good"><h3>Grupo oficial</h3><p>Loja, suporte e parceiros alinhados em um canal único.</p></article>
+      <article class="card good"><h3>Confirmação diária</h3><p>Nomes confirmados e enviados diariamente no grupo.</p></article>
+      <article class="card good"><h3>Suporte no turno</h3><p>Acompanhamento para reduzir improviso e orientar ajustes.</p></article>
+    </div>
+    <details style="margin-top:16px">
+      <summary>O que acontece em caso de acidente ou imprevisto?</summary>
+      <div class="detail"><p class="muted">Em caso de acidente, pane, falta ou qualquer imprevisto com parceiro entregador durante o turno, a Osasco Express aciona estado de urgência operacional para tentar reposição com parceiro disponível. Quando a reposição não for imediata, a equipe auxilia a loja a reorganizar tempo de preparo, liberação dos pedidos e expectativa de entrega, reduzindo o risco de atraso em cadeia.</p></div>
+    </details>
+  </div>
+</section>
+
+<section id="juridico">
+  <div class="wrap dark fade">
+    <div class="head">
+      <div><span class="label">Modelo jurídico-operacional</span><h2>A Paulino contrata gestão logística, não vínculo de entregador.</h2></div>
+      <p>A equipe de rua é formada por parceiros autônomos organizados pela Osasco Express, sem vínculo empregatício com a Paulino.</p>
+    </div>
+    <details style="background:rgba(255,250,242,.08);border-color:rgba(255,255,255,.16)">
+      <summary style="color:#fff">Entender o modelo operacional</summary>
+      <div class="detail"><p class="muted">A relação comercial é entre Paulino Pizzaria e Osasco Express. A Osasco Express presta serviço de gestão logística de delivery: organiza escala, acompanha a operação, apoia a comunicação e coordena parceiros autônomos. A Paulino mantém responsabilidade pela produção, embalagem, conferência e liberação dos pedidos.</p></div>
+    </details>
+  </div>
+</section>
+
+<section id="implantacao">
+  <div class="wrap paper fade">
+    <div class="head">
+      <div><span class="label">Implantação</span><h2>Do aceite ao início em até 7 dias úteis.</h2></div>
+      <p>Após aprovação, assinatura e liberação dos acessos necessários, a implantação acontece em até 7 dias úteis.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><b>1</b><h3>Aprovação</h3><p>Validação comercial.</p></div>
+      <div class="step"><b>2</b><h3>Contrato</h3><p>Assinatura.</p></div>
+      <div class="step"><b>3</b><h3>Integração</h3><p>Sistemas remotos.</p></div>
+      <div class="step"><b>4</b><h3>Grupo oficial</h3><p>Canal da operação.</p></div>
+      <div class="step"><b>5</b><h3>Recrutamento</h3><p>Seleção dos parceiros.</p></div>
+      <div class="step"><b>6</b><h3>Confirmação</h3><p>Primeiros times.</p></div>
+      <div class="step"><b>7</b><h3>Início</h3><p>Operação acompanhada.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="experiencia">
+  <div class="wrap photos fade">
+    <div class="photo"><img src="assets/paulino-fachada.webp" alt="Paulino Pizzaria"><div class="caption"><h3>Entrega como extensão da casa.</h3><p>Delivery não é só deslocamento. É continuidade da experiência que começa na cozinha.</p></div></div>
+    <div class="photo"><img src="assets/paulino-ambiente.webp" alt="Ambiente Paulino"><div class="caption"><h3>Tradição pede previsibilidade.</h3><p>Escala, suporte e confirmação diária para reduzir improviso nos dias mais fortes.</p></div></div>
+  </div>
+</section>
+
+<section id="pontos">
+  <div class="wrap paper fade">
+    <div class="head">
+      <div><span class="label">Antes de começar</span><h2>Respostas rápidas para evitar ruído.</h2></div>
+      <p>Detalhes disponíveis para conferência, sem pesar a leitura principal.</p>
+    </div>
+    <details><summary>A escala é definitiva?</summary><div class="detail"><p class="muted">Não. Ela é o modelo inicial recomendado e pode ser ajustada conforme comportamento real dos pedidos, distância das rotas e maturação da operação.</p></div></details>
+    <details><summary>Por que o prazo de 7 dias úteis?</summary><div class="detail"><p class="muted">Porque o processo envolve aprovação, contrato, integração remota, grupo oficial, recrutamento, seleção e confirmação dos parceiros para iniciar com segurança.</p></div></details>
+    <details><summary>O que a loja precisa fornecer?</summary><div class="detail"><p class="muted">Acessos e informações para integração remota, validação dos canais, alinhamento dos horários, janta dos parceiros e participação no grupo oficial da operação.</p></div></details>
+  </div>
+</section>
+
+<section class="cta" id="aprovar">
+  <div class="wrap">
+    <div class="cta-box fade">
+      <span class="label" style="color:var(--gold2)">Próximo passo</span>
+      <h2>Se o modelo fizer sentido, seguimos para contrato e implantação.</h2>
+      <p>Com a aprovação da proposta, a Osasco Express agenda a integração remota, inicia o recrutamento e organiza os primeiros times para começar em até 7 dias úteis.</p>
+      <div class="hero-actions" style="justify-content:center">
+        <a class="btn" href="https://wa.me/5511970334125?text=Ol%C3%A1%2C+Bruna.+Aprovamos+a+proposta+da+Paulino+Pizzaria+e+queremos+seguir+para+contrato+e+implanta%C3%A7%C3%A3o." target="_blank" rel="noopener">Aprovar pelo WhatsApp</a>
+        <a class="btn secondary" href="#top">Revisar proposta</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap footer">
+    <div><strong>Osasco Express Serviços Ltda – ME</strong><small>CNPJ: 54.707.097/0001-04<br>Av. Diogo Antônio Feijó, 855 – KM18 – Osasco/SP</small></div>
+    <div><strong>Proposta Paulino Pizzaria</strong><small>Rua João Ramalho, 996 – Perdizes<br>Gestão logística de delivery para operação de jantar.</small></div>
+    <div><strong>Contatos</strong><small>Comercial: 11 97033-4125<br>SAC: 11 98666-1784 • Suporte: 11 92478-2555</small></div>
+  </div>
+</footer>
+
+<div class="sticky"><a class="btn" href="#aprovar">Aprovar proposta</a></div>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add("in")}),{threshold:.12});
+document.querySelectorAll(".fade").forEach(el=>io.observe(el));
+document.querySelectorAll("details").forEach(d=>d.addEventListener("toggle",()=>{if(d.open){document.querySelectorAll("details").forEach(o=>{if(o!==d&&o.closest("section")===d.closest("section"))o.open=false})}}));
+</script>
+</body>
+</html>
